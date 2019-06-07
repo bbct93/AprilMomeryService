@@ -3,13 +3,14 @@ import BaseController from './base';
 export default class HomeController extends BaseController {
   public async index() {
     const { ctx } = this;
-    ctx.body = await ctx.service.test.sayHi('egg');
+    const res = await ctx.service.test.sayHi('chenTao');
+    this.success(res);
   }
 
   public async mysql() {
     const { ctx } = this;
     const params = ctx.request.body;
-    const res = ctx.service.test.mysql(params);
+    const res = await ctx.service.test.mysql(params.name);
     this.success(res);
   }
 }

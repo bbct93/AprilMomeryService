@@ -10,7 +10,11 @@ export default (appInfo: EggAppInfo) => {
   // add your egg config in here
   config.middleware = [];
 
-
+  config.security = {
+    csrf: {
+      enable: false
+    }
+}
 config.mysql = {
   // 单数据库信息配置
   client: {
@@ -30,6 +34,7 @@ config.mysql = {
   // 是否加载到 agent 上，默认关闭
   agent: false
 }
+
 
 
   // add your special config in here
